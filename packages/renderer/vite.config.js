@@ -4,6 +4,7 @@ import {chrome} from '../../electron-vendors.config.json';
 import {join} from 'path';
 import {builtinModules} from 'module';
 import vue from '@vitejs/plugin-vue';
+// import wasmPack from 'vite-plugin-wasm-pack';
 
 const PACKAGE_ROOT = __dirname;
 
@@ -19,7 +20,10 @@ const config = {
       '/@/': join(PACKAGE_ROOT, 'src') + '/',
     },
   },
-  plugins: [vue()],
+  plugins: [
+    // wasmPack([join(PACKAGE_ROOT, '/../../parser')]),
+    vue(),
+  ],
   base: '',
   server: {
     fs: {
