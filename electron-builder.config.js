@@ -8,10 +8,14 @@ if (process.env.VITE_APP_VERSION === undefined) {
  * @see https://www.electron.build/configuration/configuration
  */
 const config = {
-  'build:': {
-    'afterSign': 'electron-builder-notarize',
-    'mac': {
-      'hardenedRuntime': true,
+  build: {
+    productName: 'Mark Vue',
+    appId: 'org.helloefficiency.markvue',
+    afterSign: 'electron-builder-notarize',
+    mac: {
+      darkModeSupport: true,
+      gatekeeperAssess: false,
+      hardenedRuntime: true,
     },
   },
   directories: {
