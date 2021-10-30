@@ -148,7 +148,7 @@ jobs:
           windows_certs_password: ${{ secrets.win_certs_password }}
 
           # Base64-encoded code signing certificate for macOS
-           mac_certs: ${{ secrets.mac_certs }}
+          mac_certs: ${{ secrets.mac_certs }}
 
           # Password for decrypting `mac_certs`
-           mac_certs_password: ${{ secrets.mac_certs_password }}
+          mac_certs_password: ${{ secrets.mac_certs_password }}
