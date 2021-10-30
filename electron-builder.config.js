@@ -8,6 +8,12 @@ if (process.env.VITE_APP_VERSION === undefined) {
  * @see https://www.electron.build/configuration/configuration
  */
 const config = {
+  'build:': {
+    'afterSign': 'electron-builder-notarize',
+    'mac': {
+      'hardenedRuntime': true,
+    },
+  },
   directories: {
     output: 'dist',
     buildResources: 'buildResources',
