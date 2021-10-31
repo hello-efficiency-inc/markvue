@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const isMac = process.platform === 'darwin';
 
-export function createMenu(mainWindow) {
+export function createMenu(mainWindow: Electron.BrowserWindow) {
   const template = [
     ...(isMac ? [{
       label: app.name,
