@@ -1,6 +1,8 @@
 
 interface ElectronApi {
-  readonly versions: Readonly<NodeJS.ProcessVersions>
+  readonly ipcRendReceiveOnce: (channel: string, func: any) => void
+  readonly ipcRendReceive: (channel: string, func: any) => void
+  readonly ipcSendData: (data: string) => void
 }
 
 declare interface Window {

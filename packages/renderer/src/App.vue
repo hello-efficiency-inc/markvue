@@ -13,4 +13,10 @@ export default defineComponent({
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.splitpanes--vertical>.splitpanes__splitter {
+  min-width: 6px !important;
+  @apply bg-gray-300;
+  cursor: col-resize;
+}
 </style>

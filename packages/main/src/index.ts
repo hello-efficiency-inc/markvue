@@ -1,6 +1,7 @@
 import {app, BrowserWindow} from 'electron';
 import {join} from 'path';
 import {URL} from 'url';
+import { createMenu } from './menu';
 
 
 const isSingleInstance = app.requestSingleInstanceLock();
@@ -64,6 +65,7 @@ const createWindow = async () => {
 
 
   await mainWindow.loadURL(pageUrl);
+  createMenu(mainWindow);
 };
 
 

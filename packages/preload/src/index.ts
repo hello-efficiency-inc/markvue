@@ -1,11 +1,19 @@
-import {contextBridge} from 'electron';
+import {contextBridge, ipcRenderer} from 'electron';
 
 const apiKey = 'electron';
 /**
  * @see https://github.com/electron/electron/issues/21437#issuecomment-573522360
  */
 const api: ElectronApi = {
-  versions: process.versions,
+  ipcRendReceiveOnce: (channel: string, func: any): void => {
+    ipcRenderer.once(channel, (event, ...args) => func(...args));
+  },
+  ipcRendReceive: (channel: string, func: any): void => {
+    ipcRenderer.on(channel, (event, ...args) => func(...args));
+  },
+  ipcSendData: (data: string): void => {
+    ipcRenderer.invoke('markdown-data', data);
+  },
 };
 
 /**
