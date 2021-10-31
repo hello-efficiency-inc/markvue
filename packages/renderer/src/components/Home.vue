@@ -46,7 +46,7 @@ import 'splitpanes/dist/splitpanes.css';
 
 type mdData = {
   editor: ace.Editor | null,
-  markdownCode: string | null,
+  markdownCode: string | undefined,
   content: string | undefined,
 }
 
@@ -56,7 +56,7 @@ export default defineComponent({
   setup() {
    const markDownData: mdData = reactive({
      editor: null,
-     markdownCode: null,
+     markdownCode: undefined,
      content: undefined,
    });
 
@@ -67,7 +67,9 @@ export default defineComponent({
    });
 
    ipcRendReceive('fetch-data', () => {
-     ipcSendData(markDownData.markdownCode);
+     if (markDownData.markdownCode) {
+      ipcSendData(markDownData.markdownCode);
+     }
    });
 
    function initAceEditor()
