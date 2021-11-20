@@ -57,7 +57,7 @@
     "brace": "^0.11.1",
     "electron-updater": "4.6.1",
     "splitpanes": "^3.0.6",
-    "vite-plugin-wasm-pack": "^0.1.7",
+    "vite-plugin-wasm-pack": "^0.1.8",
     "vue": "3.2.20",
     "vue-router": "4.0.12"
   }
